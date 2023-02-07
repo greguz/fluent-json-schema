@@ -1,17 +1,15 @@
-'use strict'
+import { FORMATS, TYPES, FluentSchemaError } from './lib/utils.js'
 
-const { FORMATS, TYPES, FluentSchemaError } = require('./utils')
-
-const { BaseSchema } = require('./BaseSchema')
-const { NullSchema } = require('./NullSchema')
-const { BooleanSchema } = require('./BooleanSchema')
-const { StringSchema } = require('./StringSchema')
-const { NumberSchema } = require('./NumberSchema')
-const { IntegerSchema } = require('./IntegerSchema')
-const { ObjectSchema } = require('./ObjectSchema')
-const { ArraySchema } = require('./ArraySchema')
-const { MixedSchema } = require('./MixedSchema')
-const { RawSchema } = require('./RawSchema')
+import { BaseSchema } from './lib/BaseSchema.js'
+import { NullSchema } from './lib/NullSchema.js'
+import { BooleanSchema } from './lib/BooleanSchema.js'
+import { StringSchema } from './lib/StringSchema.js'
+import { NumberSchema } from './lib/NumberSchema.js'
+import { IntegerSchema } from './lib/IntegerSchema.js'
+import { ObjectSchema } from './lib/ObjectSchema.js'
+import { ArraySchema } from './lib/ArraySchema.js'
+import { MixedSchema } from './lib/MixedSchema.js'
+import { RawSchema } from './lib/RawSchema.js'
 
 const initialState = {
   $schema: 'http://json-schema.org/draft-07/schema#',
@@ -181,7 +179,7 @@ const S = (
   }
 })
 
-const fluentSchema = {
+export default {
   ...BaseSchema(),
   FORMATS,
   TYPES,
@@ -197,5 +195,3 @@ const fluentSchema = {
   null: () => S().null(),
   raw: fragment => S().raw(fragment)
 }
-module.exports = fluentSchema
-module.exports.default = fluentSchema

@@ -1,9 +1,18 @@
 {
-  "name": "fluent-json-schema",
-  "version": "4.0.0",
+  "name": "fluent-json-schema-es",
+  "version": "0.0.0",
   "description": "JSON Schema fluent API",
-  "main": "src/FluentJSONSchema.js",
-  "types": "types/FluentJSONSchema.d.ts",
+  "type": "module",
+  "exports": {
+    "import": "./FluentJSONSchema.js",
+    "types": "./FluentJSONSchema.d.ts"
+  },
+  "files": [
+    "!**/*.test.js",
+    "lib",
+    "FluentJSONSchema.d.ts",
+    "FluentJSONSchema.d.js"
+  ],
   "keywords": [
     "JSON",
     "schema",
@@ -14,25 +23,17 @@
     "json schema validation"
   ],
   "license": "MIT",
-  "author": "Lorenzo Sicilia <lorenzo.sicilia@gmail.com>",
-  "contributors": [
-    "Matteo Collina <hello@matteocollina.com>"
-  ],
-  "homepage": "https://github.com/fastify/fluent-json-schema#readme",
-  "bugs": {
-    "url": "https://github.com/fastify/fluent-json-schema/issues"
-  },
+  "author": "Giacomo Gregoletto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fastify/fluent-json-schema.git"
+    "url": "https://github.com/greguz/fluent-json-schema.git"
   },
   "scripts": {
     "lint": "standard | snazzy",
-    "test": "npm run test:unit && npm run test:typescript",
-    "test:unit": "jest --coverage",
-    "test:watch": "jest src/*.test.js --verbose --watch",
-    "test:typescript": "tsd",
-    "coverage": "jest src/**.test.js --coverage",
+    "test": "npm run test:unit",
+    "test:unit": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js src/*.test.js --verbose --watch",
+    "coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js src/**.test.js --coverage",
     "doc": "jsdoc2md ./src/*.js > docs/API.md"
   },
   "standard": {
@@ -48,8 +49,7 @@
     "jsdoc-to-markdown": "^8.0.0",
     "lodash.merge": "^4.6.2",
     "snazzy": "^9.0.0",
-    "standard": "^17.0.0",
-    "tsd": "^0.25.0"
+    "standard": "^17.0.0"
   },
   "dependencies": {
     "@fastify/deepmerge": "^1.1.0"

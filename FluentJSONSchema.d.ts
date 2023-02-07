@@ -228,11 +228,10 @@ type DependentSchemaOptions<T extends Partial<Record<string, JSONSchema>>> = Par
 
 type DependentRequiredOptions<T extends Partial<Record<string, string[]>>> = Partial<Record<keyof T, string[]>>
 
-export function withOptions<T>(options: SchemaOptions): T
-
 type ObjectPlaceholder = Record<string | number | symbol, any>;
 
 export interface S extends BaseSchema<S> {
+  withOptions<T>(options: SchemaOptions): T
   string: () => StringSchema
   number: () => NumberSchema
   integer: () => IntegerSchema
@@ -256,5 +255,6 @@ export interface S extends BaseSchema<S> {
   FORMATS: FORMATS
 }
 
-declare var s: S
-export default s
+declare var S: S
+
+export default S

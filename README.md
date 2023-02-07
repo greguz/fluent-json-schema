@@ -1,11 +1,17 @@
-# fluent-json-schema
+# fluent-json-schema(-es)
 
 A fluent API to generate JSON schemas (draft-07) for Node.js and browser. Framework agnostic.
 
 [![view on npm](https://img.shields.io/npm/v/fluent-json-schema.svg)](https://www.npmjs.org/package/fluent-json-schema)
 [![](https://github.com/fastify/fluent-json-schema/workflows/ci/badge.svg)](https://github.com/fastify/fluent-json-schema/actions?query=workflow%3Aci)
 [![Coverage Status](https://coveralls.io/repos/github/fastify/fluent-json-schema/badge.svg?branch=master)](https://coveralls.io/github/fastify/fluent-json-schema?branch=master)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+## **THIS IS A FORK**
+
+This project is the pure-ESM version of the official package [fluent-json-schema](https://github.com/fastify/fluent-json-schema).
+
+This project is only useful to jump on the ESM bandwagon faster. There will be no differences between this project and its "father". I will happily deprecate the package `fluent-json-schema-es` when a world of pure ESM arrives (or some PRs will be accepted faster).
 
 ## Features
 
