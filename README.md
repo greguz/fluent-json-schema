@@ -11,7 +11,9 @@ A fluent API to generate JSON schemas (draft-07) for Node.js and browser. Framew
 
 This project is the pure-ESM version of the official package [fluent-json-schema](https://github.com/fastify/fluent-json-schema).
 
-This project is only useful to jump on the ESM bandwagon faster. There will be no differences between this project and its "father". I will happily deprecate the package `fluent-json-schema-es` when a world of pure ESM arrives (or some PRs will be accepted faster).
+This project is only useful to jump on the ESM bandwagon faster. There will be no differences between this project and its "father". I will happily deprecate the package `fluent-json-schema-es` when a world of pure ESM arrives.
+
+**Last update**: 2023-02-07 ([master, commit 593770d3b408170cae20e1b7599233d7410ad2da](https://github.com/fastify/fluent-json-schema/commit/593770d3b408170cae20e1b7599233d7410ad2da))
 
 ## Features
 
