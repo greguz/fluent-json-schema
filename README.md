@@ -26,16 +26,16 @@ This project is only useful to jump on the ESM bandwagon faster. There will be n
 
 ## Install
 
-    npm i fluent-json-schema
+    npm i fluent-json-schema-es
 
 or
 
-    yarn add fluent-json-schema
+    yarn add fluent-json-schema-es
 
 ## Usage
 
 ```javascript
-const S = require('fluent-json-schema')
+import S from 'fluent-json-schema-es'
 
 const ROLES = {
   ADMIN: 'ADMIN',
@@ -139,27 +139,9 @@ Schema generated:
 
 ## TypeScript
 
-With `"esModuleInterop": true` activated in the `tsconfig.json`:
+This is now a pure-ESM package. See the official TypeScript [docs](https://www.typescriptlang.org/docs/handbook/esm-node.html) about It.
 
-```typescript
-import S from 'fluent-json-schema'
 
-const schema = S.object()
-  .prop('foo', S.string())
-  .prop('bar', S.number())
-  .valueOf()
-```
-
-With `"esModuleInterop": false` in the `tsconfig.json`:
-
-```typescript
-import * as S from 'fluent-json-schema'
-
-const schema = S.object()
-  .prop('foo', S.string())
-  .prop('bar', S.number())
-  .valueOf()
-```
 
 ## Validation
 
@@ -287,7 +269,7 @@ For example, in a CRUD API `POST /users` could use the `userBaseSchema` rather t
 which contains the `id`, `createdAt` and `updatedAt` generated server side.
 
 ```js
-const S = require('fluent-json-schema')
+import S from 'fluent-json-schema-es'
 const userBaseSchema = S.object()
   .additionalProperties(false)
   .prop('username', S.string())
@@ -310,7 +292,7 @@ when you have a large Fluent Schema, and would like to re-use some of its proper
 Select only properties you want to keep.
 
 ```js
-const S = require('fluent-json-schema')
+import S from 'fluent-json-schema-es'
 const userSchema = S.object()
   .prop('username', S.string())
   .prop('password', S.string())
@@ -324,7 +306,7 @@ const loginSchema = userSchema.only(['username', 'password'])
 Or remove properties you dont want to keep.
 
 ```js
-const S = require('fluent-json-schema')
+import S from 'fluent-json-schema-es'
 const personSchema = S.object()
   .prop('name', S.string())
   .prop('age', S.number())
@@ -340,7 +322,7 @@ const bodySchema = personSchema.without(['createdAt', 'updatedAt'])
 Every Fluent Schema object contains a boolean `isFluentSchema`. In this way, you can write your own utilities that understands the Fluent Schema API and improve the user experience of your tool.
 
 ```js
-const S = require('fluent-json-schema')
+import S from 'fluent-json-schema-es'
 const schema = S.object().prop('foo', S.string()).prop('bar', S.number())
 console.log(schema.isFluentSchema) // true
 ```
