@@ -11,7 +11,7 @@
     "!**/*.test.js",
     "lib",
     "FluentJSONSchema.d.ts",
-    "FluentJSONSchema.d.js"
+    "FluentJSONSchema.js"
   ],
   "keywords": [
     "JSON",
